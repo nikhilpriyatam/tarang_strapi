@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "magazines",
+  "info": {
+    "singularName": "magazine",
+    "pluralName": "magazines",
+    "displayName": "Magazine",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ShortIntro": {
+      "type": "string"
+    },
+    "EditionDate": {
+      "type": "date"
+    },
+    "EditionNumber": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "IsCurrentEdition": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "IssuuLink": {
+      "type": "text"
+    },
+    "IssuuEmbedHTML": {
+      "type": "text"
+    },
+    "IsPublished": {
+      "type": "boolean"
+    },
+    "NumberOfReads": {
+      "type": "integer"
+    },
+    "NumberofViews": {
+      "type": "integer"
+    },
+    "NumberOfLikes": {
+      "type": "integer"
+    },
+    "TotalReadTime": {
+      "type": "integer"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "magazine"
+    },
+    "TrailerVideo": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "CoverPagePhoto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

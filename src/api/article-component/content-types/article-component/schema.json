@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "article_components",
+  "info": {
+    "singularName": "article-component",
+    "pluralName": "article-components",
+    "displayName": "ArticleComponent"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PositionInArticle": {
+      "type": "integer"
+    },
+    "ComponentVal": {
+      "type": "string"
+    },
+    "ComponentType": {
+      "type": "enumeration",
+      "enum": [
+        "Paragraph",
+        "Quotation",
+        "ImageS3Link",
+        "AudioS3Link",
+        "VideoS3Link",
+        "VideoYoutubeLink"
+      ]
+    },
+    "article": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::article.article",
+      "inversedBy": "article_components"
+    }
+  }
+}

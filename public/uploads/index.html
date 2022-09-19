@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Upload Images</title>
+  <style>
+    input {
+      display: block;
+      padding: 2px 2px;
+      width: 20%;
+      margin: 20px 10px;
+    }
+
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      height: 40px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 30px 10px;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Upload images to Tarang Strapi</h1>
+  <form id="token_form">
+    <label for="bearer_token">Bearer Token</label>
+    <input id="bearer_token" type="text" />
+  </form>
+  <form id="api_form">
+    <!-- Can be multiple files if you setup "collection" instead of "model" -->
+    <label for="upload_file">Upload File</label>
+    <input id="upload_file" type="file" id="file" name="files" />
+    <label for="collection_name">Collection Name</label>
+    <input id="collection_name" type="text" name="ref" value="api::author.author" />
+    <label for="collection_entry">Collection Entry ID</label>
+    <input id="collection_entry" type="text" name="refId" value="1" />
+    <label for="field_name">Field Name</label>
+    <input id="field_name" type="text" name="field" value="SmallImage" />
+    <label for="s3_path">S3 folder path</label>
+    <input id="s3_path" type="text" name="path" value="author-images" />
+    <input type="submit" value="Submit" />
+  </form>
+
+  <script type="text/javascript" src="submit_data.js"></script>
+</body>
+
+</html>

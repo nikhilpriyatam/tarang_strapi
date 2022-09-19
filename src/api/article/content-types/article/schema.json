@@ -1,0 +1,124 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "articles"
+    },
+    "Illustrator": {
+      "type": "string"
+    },
+    "ShortIntro": {
+      "type": "text"
+    },
+    "IssuuPageNumber": {
+      "type": "integer"
+    },
+    "IssuuArticleStoryLink": {
+      "type": "string"
+    },
+    "CommaSeparatedHashtags": {
+      "type": "string"
+    },
+    "References": {
+      "type": "text"
+    },
+    "NumberOfPages": {
+      "type": "integer"
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Music",
+        "Arts",
+        "Culture"
+      ]
+    },
+    "PositionInMagazine": {
+      "type": "integer"
+    },
+    "IsSpotlight": {
+      "type": "boolean"
+    },
+    "Ispromote": {
+      "type": "boolean"
+    },
+    "NumberOfReads": {
+      "type": "integer",
+      "default": 0
+    },
+    "NumberOfViews": {
+      "type": "integer",
+      "default": 0
+    },
+    "NumberOfLikes": {
+      "type": "integer",
+      "default": 0
+    },
+    "WordCount": {
+      "type": "integer"
+    },
+    "TotalReadTime": {
+      "type": "integer"
+    },
+    "IsActive": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "IsPopular": {
+      "type": "boolean"
+    },
+    "DatePublished": {
+      "type": "date"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "article_components": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article-component.article-component",
+      "mappedBy": "article"
+    },
+    "ArticleId": {
+      "type": "uid"
+    },
+    "SubTitle": {
+      "type": "string"
+    },
+    "magazine": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::magazine.magazine",
+      "inversedBy": "articles"
+    },
+    "SmallImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "LargeImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
